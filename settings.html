@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Settings</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="display-4 text-center">Customize Settings</h1>
+
+        <!-- URL Settings Section -->
+        <h2 class="mt-4">Manage URLs</h2>
+        <div class="input-group mb-3">
+            <input type="text" id="urlInput" class="form-control" placeholder="Add a URL">
+            <div class="input-group-append">
+                <button class="btn btn-primary" id="addURL">Add URL</button>
+            </div>
+        </div>
+
+        <!-- URL List Section -->
+        <h3>Added URLs</h3>
+        <ul id="urlList" class="list-group">
+            <!-- URL items will be added dynamically here -->
+        </ul>
+
+        <!-- URL Search Section -->
+        <h3>Search URLs</h3>
+        <input type="text" id="searchInput" class="form-control" placeholder="Search URLs">
+        <ul id="searchResult" class="list-group">
+            <!-- Search results will be displayed here -->
+        </ul>
+
+        <!-- Session Password Section -->
+        <h2 class="mt-4">Set Session Password</h2>
+        <div class="input-group mb-3">
+            <input type="password" id="passwordInput" class="form-control" placeholder="Set a session password">
+            <div class="input-group-append">
+                <button class="btn btn-primary" id="setPassword">Set Password</button>
+            </div>
+        </div>
+    </div>
+    <script src="options.js"></script>
+</body>
+
+</html>
