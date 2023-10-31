@@ -5,284 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
-
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> -->
-
-
-    <script src="../content.js"></script>
-
-    <style>
-        @import url(https://fonts.googleapis.com/css?family=Montserrat);
-
-        body {
-
-            height: 100vh;
-            color: #6495ED;
-
-        }
-
-        .container {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .left-container {
-            flex: 1;
-            background-color: #6495ED;
-            color: #fff;
-            text-align: center;
-            padding: 40px;
-            padding-top: 300px;
-
-        }
-
-        .left-container h1 {
-            font-size: 2.7rem;
-        }
-
-        .left-container p {
-
-            font-size: 1.5rem;
-        }
-
-        .right-container {
-            flex: 1;
-            padding: 40px;
-        }
-
-        .right-container h2 {
-            font-size: 2rem;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        input {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #6495ED;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-
-        button:hover {
-            background-color: #4169E1;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            height: 100%;
-        }
-
-
-        /* ----------- */
-
-
-        #multi-step-form-container {
-            margin-top: 5rem;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .pl-0 {
-            padding-left: 0;
-        }
-
-        .button {
-            padding: 0.7rem 1.5rem;
-            border: 1px solid #4361ee;
-            background-color: #4361ee;
-            color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .submit-btn {
-            border: 1px solid #0e9594;
-            background-color: #0e9594;
-        }
-
-        .mt-3 {
-            margin-top: 2rem;
-        }
-
-        .d-none {
-            display: none;
-        }
-
-        .form-step {
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-            padding: 3rem;
-        }
-
-        .font-normal {
-            font-weight: normal;
-        }
-
-        ul.form-stepper {
-            counter-reset: section;
-            margin-bottom: 3rem;
-        }
-
-        ul.form-stepper .form-stepper-circle {
-            position: relative;
-        }
-
-        ul.form-stepper .form-stepper-circle span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateY(-50%) translateX(-50%);
-        }
-
-        .form-stepper-horizontal {
-            position: relative;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-        }
-
-        ul.form-stepper>li:not(:last-of-type) {
-            margin-bottom: 0.625rem;
-            -webkit-transition: margin-bottom 0.4s;
-            -o-transition: margin-bottom 0.4s;
-            transition: margin-bottom 0.4s;
-        }
-
-        .form-stepper-horizontal>li:not(:last-of-type) {
-            margin-bottom: 0 !important;
-        }
-
-        .form-stepper-horizontal li {
-            position: relative;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-flex: 1;
-            -ms-flex: 1;
-            flex: 1;
-            -webkit-box-align: start;
-            -ms-flex-align: start;
-            align-items: start;
-            -webkit-transition: 0.5s;
-            transition: 0.5s;
-        }
-
-        .form-stepper-horizontal li:not(:last-child):after {
-            position: relative;
-            -webkit-box-flex: 1;
-            -ms-flex: 1;
-            flex: 1;
-            height: 1px;
-            content: "";
-            top: 32%;
-        }
-
-        .form-stepper-horizontal li:after {
-            background-color: #dee2e6;
-        }
-
-        .form-stepper-horizontal li.form-stepper-completed:after {
-            background-color: #4da3ff;
-        }
-
-        .form-stepper-horizontal li:last-child {
-            flex: unset;
-        }
-
-        ul.form-stepper li a .form-stepper-circle {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            margin-right: 0;
-            line-height: 1.7rem;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.38);
-            border-radius: 50%;
-        }
-
-        .form-stepper .form-stepper-active .form-stepper-circle {
-            background-color: #4361ee !important;
-            color: #fff;
-        }
-
-        .form-stepper .form-stepper-active .label {
-            color: #4361ee !important;
-        }
-
-        .form-stepper .form-stepper-active .form-stepper-circle:hover {
-            background-color: #4361ee !important;
-            color: #fff !important;
-        }
-
-        .form-stepper .form-stepper-unfinished .form-stepper-circle {
-            background-color: #f8f7ff;
-        }
-
-        .form-stepper .form-stepper-completed .form-stepper-circle {
-            background-color: #0e9594 !important;
-            color: #fff;
-        }
-
-        .form-stepper .form-stepper-completed .label {
-            color: #0e9594 !important;
-        }
-
-        .form-stepper .form-stepper-completed .form-stepper-circle:hover {
-            background-color: #0e9594 !important;
-            color: #fff !important;
-        }
-
-        .form-stepper .form-stepper-active span.text-muted {
-            color: #fff !important;
-        }
-
-        .form-stepper .form-stepper-completed span.text-muted {
-            color: #fff !important;
-        }
-
-        .form-stepper .label {
-            font-size: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        .form-stepper a {
-            cursor: default;
-        }
-
-
-        /*Background color*/
-    </style>
+    <link rel="stylesheet" href="form.css">
+    <script src="../form.js"></script>
 </head>
 
 <body>
@@ -310,7 +34,7 @@
                             <span class="form-stepper-circle text-muted">
                                 <span>2</span>
                             </span>
-                            <div class="label text-muted">Social Profiles</div>
+                            <div class="label text-muted">Settings</div>
                         </a>
                     </li>
                     <!-- Step 3 -->
@@ -319,7 +43,7 @@
                             <span class="form-stepper-circle text-muted">
                                 <span>3</span>
                             </span>
-                            <div class="label text-muted">Personal Details</div>
+                            <div class="label text-muted">Payment</div>
                         </a>
                     </li>
                 </ul>
@@ -330,7 +54,14 @@
                         <h2 class="font-normal">Account Basic Details</h2>
                         <!-- Step 1 input fields -->
                         <div class="mt-3">
-                            Step 1 input fields goes here..
+
+
+                            <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                            <br>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            <br>
+                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+
                         </div>
                         <div class="mt-3">
                             <button class="button btn-navigate-form-step" type="button" step_number="2">Next</button>
@@ -338,7 +69,7 @@
                     </section>
                     <!-- Step 2 Content, default hidden on page load. -->
                     <section id="step-2" class="form-step d-none">
-                        <h2 class="font-normal">Social Profiles</h2>
+                        <h2 class="font-normal">Settings</h2>
                         <!-- Step 2 input fields -->
                         <div class="mt-3">
                             Step 2 input fields goes here..
@@ -350,7 +81,7 @@
                     </section>
                     <!-- Step 3 Content, default hidden on page load. -->
                     <section id="step-3" class="form-step d-none">
-                        <h2 class="font-normal">Personal Details</h2>
+                        <h2 class="font-normal">Payment</h2>
                         <!-- Step 3 input fields -->
                         <div class="mt-3">
                             Step 3 input fields goes here..
